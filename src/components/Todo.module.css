@@ -19,7 +19,14 @@
   border: 2px solid var(--blue);
   outline: none;
   cursor: pointer;
+  outline: none;
 }
+
+.wrapper input:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
+
 .wrapper input[type='checkbox']:checked {
   background-color: var(--purple-dark);
   border: solid var(--purple-dark);
@@ -27,4 +34,16 @@
 
 .wrapper input:focus {
   text-decoration: none;
+}
+.wrapper input[type='checkbox']:checked::before {
+  content: url('./checkMark.svg');
+  padding-bottom: 3px;
+  padding-left: 0.15px;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
 }
