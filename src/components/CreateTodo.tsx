@@ -3,14 +3,14 @@ import { PlusCircle } from 'phosphor-react';
 
 export function CreateTodo() {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper}`}>
       <input
         placeholder="Adicione uma nova tarefa"
         type="text"
-        className={styles.createTodoInput}
+        className={`${styles.createTodoInput}`}
       />
       <button className={styles.createTodoButton}>
-        <p>Criar</p>
+        <p className={styles.createTodoButtonWord}>Criar</p>
         <PlusCircle size={20} />
       </button>
     </div>
