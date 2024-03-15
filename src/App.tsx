@@ -4,10 +4,12 @@ import { Header } from './components/Header';
 
 function App() {
   return (
-    <div className={styles.wrapper}>
+    <>
       <Header />
-      <CreateTodo />
-    </div>
+      <div className={styles.wrapper}>
+        <CreateTodo />
+      </div>
+    </>
   );
 }
 
