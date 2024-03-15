@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  gap: 0.75rem;
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+.wrapper:first-child {
+  margin-top: 1.5rem;
+}
+
+.wrapper input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  outline: none;
+  cursor: pointer;
+}
+.wrapper input[type='checkbox']:checked {
+  background-color: var(--purple-dark);
+  border: solid var(--purple-dark);
+}
+
+.wrapper input:focus {
+  text-decoration: none;
+}
