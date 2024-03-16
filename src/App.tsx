@@ -8,34 +8,9 @@ import { Todo } from './components/Todo';
 import { EmptyTodos } from './components/EmptyTodos';
 
 function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      content: 'Learn about the history of ancient civilizations.',
-      isDone: true,
-    },
-    {
-      id: 2,
-      content: 'Explore new hiking trails in the nearby mountains.',
-      isDone: true,
-    },
-    {
-      id: 3,
-      content: 'Research the impact of climate change on marine ecosystems.',
-      isDone: false,
-    },
-    {
-      id: 4,
-      content:
-        'Volunteer at a local animal shelter to help care for abandoned pets.',
-      isDone: false,
-    },
-    {
-      id: 5,
-      content: 'Attend a photography workshop to improve your skills.',
-      isDone: false,
-    },
-  ]);
+  const [todos, setTodos] = useState<
+    { id: number; content: string; isDone: boolean }[]
+  >([]);
 
   function deleteTodo(id: number) {
     const todosWithoutDeletedOne = todos.filter((todo) => todo.id !== id);
