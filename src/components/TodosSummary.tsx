@@ -11,7 +11,9 @@ export function TodosSummary({ totalTodos }: { totalTodos: number }) {
 
         <div className={styles.TodoStatus}>
           <p className={styles.tasksDone}>Concluídas</p>
-          <span className={styles.summaryItemCounter}>{`${2} de ${5}`}</span>
+          <span
+            className={styles.summaryItemCounter}
+          >{`${2} de ${totalTodos}`}</span>
         </div>
       </div>
     </div>
