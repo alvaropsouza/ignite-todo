@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Todo.module.css';
+import { Trash } from 'phosphor-react';
 
 interface TodoProps {
   content: string;
@@ -35,6 +36,15 @@ export function Todo({ content, isDone = false }: TodoProps) {
       >
         {content}
       </p>
+      <Trash
+        style={{
+          width: '1.5rem',
+          height: '1rem',
+          cursor: 'pointer',
+          color: 'var(--gray-300)',
+          marginLeft: 'auto',
+        }}
+      />
     </div>
   );
 }
