@@ -1,8 +1,21 @@
 .wrapper {
   display: flex;
+  justify-content: left;
+  align-items: center;
   gap: 0.75rem;
   margin-left: 0px;
   margin-right: auto;
+  font-size: 14px;
+  padding: 1rem;
+  background-color: var(--gray-500);
+  border-radius: 0.5rem;
+  width: 46rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 19.5rem;
+  }
 }
 
 .wrapper:first-child {
@@ -14,6 +27,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 16px;
+
   height: 16px;
   border-radius: 50%;
   border: 2px solid var(--blue);

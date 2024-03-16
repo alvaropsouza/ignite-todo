@@ -23,7 +23,6 @@
 
 @media only screen and (max-width: 768px) {
   .todosSummary {
-    flex-direction: column;
     gap: 0.5rem;
   }
 }

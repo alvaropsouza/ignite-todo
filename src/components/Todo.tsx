@@ -13,6 +13,10 @@ export function Todo({ content, isDone = false }: TodoProps) {
     setTodoIsDone(e.target.checked);
   }
 
+  function handleTodoClick() {
+    setTodoIsDone(!todoIsDone);
+  }
+
   return (
     <div className={styles.wrapper}>
       <input
@@ -22,7 +26,7 @@ export function Todo({ content, isDone = false }: TodoProps) {
         checked={todoIsDone}
         onChange={checkTodoIsDone}
       />
-      <p>{content}</p>
+      <p onClick={handleTodoClick}>{content}</p>
     </div>
   );
 }

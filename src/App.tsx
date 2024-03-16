@@ -36,10 +36,10 @@ const todos = [
 
 function App() {
   return (
-    <>
+    <div className={`${styles.wrapper}`}>
       <Header />
       <CreateTodo />
-      <div className={`${styles.wrapper}`}>
+      <div className={`${styles.todosArea}`}>
         <TodosSummary />
         <TodosList>
           {todos.map((todo) => {
@@ -49,7 +49,7 @@ function App() {
           })}
         </TodosList>
       </div>
-    </>
+    </div>
   );
 }
 

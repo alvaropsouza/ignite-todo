@@ -1,4 +1,8 @@
 .wrapper {
+  margin-bottom: 0.25rem;
+}
+
+.todosArea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
