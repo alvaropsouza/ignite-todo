@@ -12,6 +12,10 @@
   width: 46rem;
 }
 
+.wrapper :hover {
+  cursor: pointer;
+}
+
 .wrapper:first-child {
   margin-top: 1.5rem;
 }
@@ -73,6 +77,6 @@
 
 @media only screen and (max-width: 375px) {
   .wrapper {
-    width: 15.5rem;
+    width: 18.5rem;
   }
 }

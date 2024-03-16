@@ -3,6 +3,11 @@
   gap: 28.75rem;
 }
 
+.todosSummary :hover {
+  cursor: default;
+  user-select: none;
+}
+
 .TodoStatus {
   display: flex;
   gap: 0.5rem;
