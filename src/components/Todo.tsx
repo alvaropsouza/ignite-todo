@@ -5,10 +5,15 @@ import { Trash } from 'phosphor-react';
 interface TodoProps {
   content: string;
   isDone?: boolean;
+  onDeleteTodo: (content: string) => void;
 }
 
-export function Todo({ content, isDone = false }: TodoProps) {
+export function Todo({ content, isDone = false, onDeleteTodo }: TodoProps) {
   const [todoIsDone, setTodoIsDone] = useState(isDone);
+
+  function handleDeleteTodo() {
+    onDeleteTodo(content);
+  }
 
   function checkTodoIsDone(e: React.ChangeEvent<HTMLInputElement>) {
     setTodoIsDone(e.target.checked);
@@ -22,7 +27,7 @@ export function Todo({ content, isDone = false }: TodoProps) {
     <div className={styles.wrapper}>
       <input
         type="checkbox"
-        name=""
+        name="todoContent"
         id=""
         checked={todoIsDone}
         onChange={checkTodoIsDone}
@@ -36,15 +41,7 @@ export function Todo({ content, isDone = false }: TodoProps) {
       >
         {content}
       </p>
-      <Trash
-        style={{
-          width: '1.5rem',
-          height: '1rem',
-          cursor: 'pointer',
-          color: 'var(--gray-300)',
-          marginLeft: 'auto',
-        }}
-      />
+      <Trash className={styles.trashIcon} onClick={handleDeleteTodo} />
     </div>
   );
 }

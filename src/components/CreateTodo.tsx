@@ -7,6 +7,7 @@ export function CreateTodo() {
       <input
         placeholder="Adicione uma nova tarefa"
         type="text"
+        name="todoContent"
         className={`${styles.createTodoInput}`}
       />
       <button className={styles.createTodoButton}>
