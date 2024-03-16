@@ -5,6 +5,7 @@ import { Header } from './components/Header';
 import { TodosSummary } from './components/TodosSummary';
 import { TodosList } from './components/TodosList';
 import { Todo } from './components/Todo';
+import { EmptyTodos } from './components/EmptyTodos';
 
 function App() {
   const [todos, setTodos] = useState([
@@ -58,18 +59,22 @@ function App() {
       <CreateTodo onCreateTodo={createTodo} />
       <div className={`${styles.todosArea}`}>
         <TodosSummary totalTodos={todos.length} />
-        <TodosList>
-          {todos.map((todo) => {
-            return (
-              <Todo
-                content={todo.content}
-                isDone={todo.isDone}
-                key={todo.id}
-                onDeleteTodo={deleteTodo}
-              />
-            );
-          })}
-        </TodosList>
+        {todos.length > 0 ? (
+          <TodosList>
+            {todos.map((todo) => {
+              return (
+                <Todo
+                  content={todo.content}
+                  isDone={todo.isDone}
+                  key={todo.id}
+                  onDeleteTodo={deleteTodo}
+                />
+              );
+            })}
+          </TodosList>
+        ) : (
+          <EmptyTodos />
+        )}
       </div>
     </div>
   );
