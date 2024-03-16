@@ -5,12 +5,12 @@ export function TodosSummary() {
     <div>
       <div className={styles.todosSummary}>
         <div className={styles.TodoStatus}>
-          <p className={styles.createdTasksTitle}>Tarefas criadas</p>
-          <p className={styles.summaryItemCounter}>{`${5}`}</p>
+          <p className={styles.createdTasks}>Tarefas criadas</p>
+          <span className={styles.summaryItemCounter}>{`${5}`}</span>
         </div>
 
         <div className={styles.TodoStatus}>
-          <p>Concluídas</p>
+          <p className={styles.tasksDone}>Concluídas</p>
           <span className={styles.summaryItemCounter}>{`${2} de ${5}`}</span>
         </div>
       </div>

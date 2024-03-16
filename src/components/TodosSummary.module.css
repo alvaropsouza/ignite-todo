@@ -10,8 +10,12 @@
   font-size: 14px;
 }
 
-.createdTasksTitle {
+.createdTasks {
   color: var(--blue);
+}
+
+.tasksDone {
+  color: var(--purple);
 }
 
 .summaryItemCounter {
@@ -23,6 +27,6 @@
 
 @media only screen and (max-width: 768px) {
   .todosSummary {
-    gap: 0.5rem;
+    gap: 1rem;
   }
 }
