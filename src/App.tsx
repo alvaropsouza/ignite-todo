@@ -1,10 +1,10 @@
+import { useState } from 'react';
 import styles from './App.module.css';
 import { CreateTodo } from './components/CreateTodo';
 import { Header } from './components/Header';
 import { TodosSummary } from './components/TodosSummary';
 import { TodosList } from './components/TodosList';
 import { Todo } from './components/Todo';
-import { useState } from 'react';
 
 function App() {
   const [todos, setTodos] = useState([
@@ -43,10 +43,19 @@ function App() {
     setTodos(todosWithoutDeletedOne);
   }
 
+  function createTodo(content: string) {
+    const newTodo = {
+      id: todos.length + 1,
+      content: content,
+      isDone: false,
+    };
+    setTodos([...todos, newTodo]);
+  }
+
   return (
     <div className={`${styles.wrapper}`}>
       <Header />
-      <CreateTodo />
+      <CreateTodo onCreateTodo={createTodo} />
       <div className={`${styles.todosArea}`}>
         <TodosSummary totalTodos={todos.length} />
         <TodosList>
