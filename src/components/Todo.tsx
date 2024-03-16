@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './Todo.module.css';
 import { Trash } from 'phosphor-react';
 
@@ -6,20 +6,23 @@ interface TodoProps {
   content: string;
   isDone?: boolean;
   onDeleteTodo: (content: string) => void;
+  onToggleTodo: (content: string) => void;
 }
 
-export function Todo({ content, isDone = false, onDeleteTodo }: TodoProps) {
+export function Todo({
+  content,
+  isDone = false,
+  onDeleteTodo,
+  onToggleTodo,
+}: TodoProps) {
   const [todoIsDone, setTodoIsDone] = useState(isDone);
 
   function handleDeleteTodo() {
     onDeleteTodo(content);
   }
 
-  function checkTodoIsDone(e: React.ChangeEvent<HTMLInputElement>) {
-    setTodoIsDone(e.target.checked);
-  }
-
   function handleTodoClick() {
+    onToggleTodo(content);
     setTodoIsDone(!todoIsDone);
   }
 
@@ -30,7 +33,7 @@ export function Todo({ content, isDone = false, onDeleteTodo }: TodoProps) {
         name="todoContent"
         id=""
         checked={todoIsDone}
-        onChange={checkTodoIsDone}
+        onChange={handleTodoClick}
       />
       <p
         onClick={handleTodoClick}

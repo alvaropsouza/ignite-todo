@@ -1,6 +1,12 @@
 import styles from './TodosSummary.module.css';
 
-export function TodosSummary({ totalTodos }: { totalTodos: number }) {
+export function TodosSummary({
+  totalTodos,
+  amountDone,
+}: {
+  totalTodos: number;
+  amountDone: number;
+}) {
   return (
     <div>
       <div className={styles.todosSummary}>
@@ -13,7 +19,7 @@ export function TodosSummary({ totalTodos }: { totalTodos: number }) {
           <p className={styles.tasksDone}>Concluídas</p>
           <span
             className={styles.summaryItemCounter}
-          >{`${2} de ${totalTodos}`}</span>
+          >{`${amountDone} de ${totalTodos}`}</span>
         </div>
       </div>
     </div>

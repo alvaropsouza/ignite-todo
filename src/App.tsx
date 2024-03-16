@@ -37,10 +37,8 @@ function App() {
     },
   ]);
 
-  function deleteTodo(content: string) {
-    const todosWithoutDeletedOne = todos.filter(
-      (todo) => todo.content !== content
-    );
+  function deleteTodo(id: number) {
+    const todosWithoutDeletedOne = todos.filter((todo) => todo.id !== id);
     setTodos(todosWithoutDeletedOne);
   }
 
@@ -53,12 +51,22 @@ function App() {
     setTodos([...todos, newTodo]);
   }
 
+  function toggleTodo(id: number) {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
+    );
+    setTodos(updatedTodos);
+  }
+
   return (
     <div className={`${styles.wrapper}`}>
       <Header />
       <CreateTodo onCreateTodo={createTodo} />
       <div className={`${styles.todosArea}`}>
-        <TodosSummary totalTodos={todos.length} />
+        <TodosSummary
+          totalTodos={todos.length}
+          amountDone={todos.filter((todo) => todo.isDone).length}
+        />
         {todos.length > 0 ? (
           <TodosList>
             {todos.map((todo) => {
@@ -67,7 +75,8 @@ function App() {
                   content={todo.content}
                   isDone={todo.isDone}
                   key={todo.id}
-                  onDeleteTodo={deleteTodo}
+                  onDeleteTodo={() => deleteTodo(todo.id)}
+                  onToggleTodo={() => toggleTodo(todo.id)} // Passing the toggle function
                 />
               );
             })}
