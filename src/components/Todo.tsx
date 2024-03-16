@@ -26,7 +26,15 @@ export function Todo({ content, isDone = false }: TodoProps) {
         checked={todoIsDone}
         onChange={checkTodoIsDone}
       />
-      <p onClick={handleTodoClick}>{content}</p>
+      <p
+        onClick={handleTodoClick}
+        style={{
+          textDecoration: todoIsDone ? 'line-through' : 'none',
+          color: todoIsDone ? 'var(--gray-300)' : 'var(--gray-100)',
+        }}
+      >
+        {content}
+      </p>
     </div>
   );
 }

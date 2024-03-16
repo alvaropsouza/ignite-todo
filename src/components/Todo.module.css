@@ -12,12 +12,6 @@
   width: 46rem;
 }
 
-@media only screen and (max-width: 768px) {
-  .wrapper {
-    width: 19.5rem;
-  }
-}
-
 .wrapper:first-child {
   margin-top: 1.5rem;
 }
@@ -27,7 +21,6 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 16px;
-
   height: 16px;
   border-radius: 50%;
   border: 2px solid var(--blue);
@@ -51,6 +44,7 @@
   text-decoration: none;
 }
 .wrapper input[type='checkbox']:checked::before {
+  text-decoration: line-through;
   content: url('./checkMark.svg');
   padding-bottom: 3px;
   padding-left: 0.15px;
@@ -61,4 +55,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 19.5rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .wrapper {
+    width: 15.5rem;
+  }
 }
