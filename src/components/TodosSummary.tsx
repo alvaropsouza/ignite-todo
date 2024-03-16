@@ -1,12 +1,12 @@
 import styles from './TodosSummary.module.css';
 
-export function TodosSummary() {
+export function TodosSummary({ totalTodos }: { totalTodos: number }) {
   return (
     <div>
       <div className={styles.todosSummary}>
         <div className={styles.TodoStatus}>
           <p className={styles.createdTasks}>Tarefas criadas</p>
-          <span className={styles.summaryItemCounter}>{`${5}`}</span>
+          <span className={styles.summaryItemCounter}>{`${totalTodos}`}</span>
         </div>
 
         <div className={styles.TodoStatus}>

@@ -48,7 +48,7 @@ function App() {
       <Header />
       <CreateTodo />
       <div className={`${styles.todosArea}`}>
-        <TodosSummary />
+        <TodosSummary totalTodos={todos.length} />
         <TodosList>
           {todos.map((todo) => {
             return (
