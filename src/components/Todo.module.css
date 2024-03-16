@@ -52,6 +52,15 @@
   border: solid var(--purple-dark);
 }
 
+.wrapper input[type='checkbox']:checked:hover {
+  background-color: var(--purple);
+  border: solid var(--purple);
+}
+
+.wrapper input[type='checkbox']:not(:checked):hover {
+  background-color: rgba(30, 111, 159, 0.5);
+}
+
 .wrapper input:focus {
   text-decoration: none;
 }
